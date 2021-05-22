@@ -30,10 +30,33 @@ function playRound(playerSelection, computerSelection) {
   } 
 }
 
-const playerSelection = prompt("Enter 'Rock', ' Paper', or 'Scissors'",);
-const computerSelection = computerPlay();
-alert(playRound(playerSelection, computerSelection));
-
 function game() {
-  
+  let playerScore = 0;
+  let computerScore = 0;
+  while (playerScore < 5 || computerScore < 5) {
+    const playerSelection = prompt("Enter 'Rock', ' Paper', or 'Scissors'",);
+    const computerSelection = computerPlay();
+    if (playerSelection == "Rock" && computerSelection == "Paper") {
+      ++computerScore;
+    }
+    else if (playerSelection == "Rock" && computerSelection == "Scissors") {
+      ++playerScore;
+    } 
+    else if (playerSelection == "Paper" && computerSelection == "Rock") {
+      ++playerScore;
+    } 
+    else if (playerSelection == "Paper" && computerSelection == "Scissors") {
+      ++computerScore;
+    } 
+    else if (playerSelection == "Scissors" && computerSelection == "Rock") {
+      ++computerScore;
+    } 
+    else if (playerSelection == "Scissors" && computerSelection == "Paper") {
+      ++playerScore;
+    } 
+    alert(playRound(playerSelection, computerSelection));
+    alert("Your score: " + playerScore + ", Computer Score: " + computerScore);
+  }
 }
+
+console.log(game())
