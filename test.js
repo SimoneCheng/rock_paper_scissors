@@ -23,7 +23,7 @@ function playRound(playerSelection, computerSelection) {
     return "You LOSE! Paper beats Scissors!";
   } 
   else if (playerSelection == "Scissors" && computerSelection == "Rock") {
-    return "You LOSE! Scissors beats Rock!";
+    return "You LOSE! Rock beats Scissors!";
   } 
   else if (playerSelection == "Scissors" && computerSelection == "Paper") {
     return "You WIN! Scissors beats Paper!";
@@ -33,7 +33,7 @@ function playRound(playerSelection, computerSelection) {
 function game() {
   let playerScore = 0;
   let computerScore = 0;
-  while (playerScore < 5 || computerScore < 5) {
+  while (playerScore <= 5 || computerScore <= 5) {
     const playerSelection = prompt("Enter 'Rock', ' Paper', or 'Scissors'",);
     const computerSelection = computerPlay();
     if (playerSelection == "Rock" && computerSelection == "Paper") {
@@ -56,6 +56,14 @@ function game() {
     } 
     alert(playRound(playerSelection, computerSelection));
     alert("Your score: " + playerScore + ", Computer Score: " + computerScore);
+    if (playerScore == 5) {
+      alert("You WIN!");
+      break;
+    }
+    else if (computerScore == 5) {
+      alert("You LOSE!");
+      break;
+    }
   }
 }
 
