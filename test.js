@@ -57,14 +57,15 @@ function game() {
     alert(playRound(playerSelection, computerSelection));
     alert("Your score: " + playerScore + ", Computer Score: " + computerScore);
     if (playerScore == 5) {
-      alert("You WIN!");
       break;
     }
     else if (computerScore == 5) {
-      alert("You LOSE!");
       break;
     }
   }
+  if (playerScore == 5) {
+    alert("You WIN! You got 5 score")
+  } else {alert("You LOSE! Computer got 5 score")}
 }
 
 console.log(game())
